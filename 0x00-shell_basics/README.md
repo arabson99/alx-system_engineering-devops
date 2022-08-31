@@ -15,3 +15,4 @@ And hidden files (starting with .)
 script that creates a directory named my_first_directory in the /tmp/ directory
 Moving file from directory to another directory
 Delete the file betty
+Deleting directory
