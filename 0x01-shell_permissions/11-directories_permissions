@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod -R ugo+x /var/www
+sudo chmod ugo+x *
