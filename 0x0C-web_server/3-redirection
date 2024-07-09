@@ -5,14 +5,12 @@ apt-get -y install nginx
 
 mkdir -p /var/www/html
 touch /var/www/html/index.html
-echo "Holberton School" > /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
 touch /var/www/html/404.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 printf %s "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    add_header X-Served-By $HOSTNAME;
+    listen 80;
+    listen [::]:80;
     root   /var/www/html;
     index  index.html index.htm;
 
