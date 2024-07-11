@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # script of task 0 but making it short and sweet
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
+service nginx start
 kill "$(pgrep 'nginx' | head -1)"
