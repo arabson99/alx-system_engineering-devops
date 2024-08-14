@@ -1,3 +1,6 @@
+<p align="center">
+	<img src="https://github.com/arabson99/alx-system_engineering-devops/blob/master/0x16-api_advanced/assets/API%20advanced.png" alt="API advanced">
+
 # API advanced
 
 The API advanced project is aimed at enhancing skills in working with APIs using the Reddit API. This project includes Python scripts designed to interact with various Reddit endpoints and perform different data handling tasks.
