@@ -6,6 +6,7 @@ import requests
 
 def number_of_subscribers(subreddit):
     """Return the total number of subscribers for a given subreddit.
+
     Args:
         subreddit (str): The name of the subreddit.
 
@@ -16,13 +17,11 @@ def number_of_subscribers(subreddit):
     headers = {
         "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
     }
-    response = requests.get(url, headers=headers, allow_redirects=False)
-
-    if response.status_code == 404:
-        return 0
 
     try:
+        response = requests.get(url, headers=headers, allow_redirects=False)
+        response.raise_for_status()
         data = response.json().get("data", {})
         return data.get("subscribers", 0)
-    except Exception:
+    except requests.exceptions.RequestException:
         return 0
