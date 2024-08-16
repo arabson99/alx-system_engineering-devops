@@ -14,9 +14,7 @@ def number_of_subscribers(subreddit):
         int: The number of subscribers if the subreddit is valid, otherwise 0.
     """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {
-        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
-    }
+    headers = {'user-agent': 'redquery'}
 
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
