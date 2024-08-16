@@ -10,8 +10,8 @@ def number_of_subscribers(subreddit):
         subreddit (str): The name of the subreddit to query.
 
     Returns:
-        int: The number of subscribers, or 0 if an error occurs or 
-        the subreddit is invalid.
+        int: The number of subscribers, or 0 if an error occurs or
+              the subreddit is invalid.
     """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {
@@ -22,10 +22,8 @@ def number_of_subscribers(subreddit):
         response = requests.get(url, headers=headers, allow_redirects=False)
         if response.status_code == 404:
             return 0
-        response.raise_for_status()  # Raise an exception for HTTP error responses
-        data = response.json().get("data")
-        if data is None:
-            return 0
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        data = response.json().get("data", {})
         return data.get("subscribers", 0)
     except requests.RequestException:
         return 0
